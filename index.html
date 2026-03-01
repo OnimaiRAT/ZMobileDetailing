@@ -3,453 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZMobileDetails - Premium Mobile Car Detailing in Nashville</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Z Mobile Details - Professional Car Detailing</title>
     <style>
-        /* Reset and Base Styles */
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
+            background-color: #f4f4f4;
             color: #333;
-            overflow-x: hidden;
         }
-        .container {
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        header p {
+            font-size: 1.3em;
+        }
+        section {
+            padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Header */
-        header {
-            background: rgba(30, 60, 114, 0.95);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: background 0.3s;
-        }
-        header.scrolled {
-            background: rgba(30, 60, 114, 1);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 400;
-            transition: all 0.3s;
-            position: relative;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            transition: width 0.3s;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        h2 {
             text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            margin-top: 80px;
+            color: #d32f2f; /* Red accent for automotive feel */
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(30,60,114,0.8) 0%, rgba(42,82,152,0.6) 50%, rgba(255,107,53,0.4) 100%);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            animation: fadeInUp 1s ease-out;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .hero .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-            opacity: 0.95;
-        }
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.4s;
-            box-shadow: 0 10px 30px rgba(255,107,53,0.4);
-        }
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(255,107,53,0.6);
-        }
-
-        /* Services Section */
         .services {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 4rem;
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
         }
         .service-card {
-            background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(20px);
-            padding: 3rem 2rem;
-            border-radius: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            overflow: hidden;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            transition: all 0.4s;
-            border: 1px solid rgba(255,255,255,0.2);
+            padding: 20px;
         }
-        .service-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
-        }
-        .service-icon {
-            font-size: 4rem;
-            color: #ff6b35;
-            margin-bottom: 1.5rem;
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
         .service-card h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #1e3c72;
-            font-weight: 600;
+            margin: 15px 0 10px;
+            color: #d32f2f;
         }
         .price {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #f7931e;
-            margin: 1rem 0;
-            text-shadow: 0 2px 10px rgba(247,147,30,0.3);
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #388e3c; /* Green for pricing */
+            margin: 10px 0;
         }
-        .service-card p {
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        /* Contact Section */
         .contact {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background-color: #1a1a1a;
             color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwxMDcsNTMsMC4xKSIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCAgTCAwIDAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMTA3LDUzLDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuMDUiLz48L3BhdHRlcm4+PC9zdmc+') repeat;
-            z-index: 0;
-            opacity: 0.1;
-        }
-        .contact-content {
-            position: relative;
-            z-index: 1;
-        }
-        .section-title {
-            color: white;
-        }
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
             text-align: center;
-            margin-bottom: 3rem;
+            padding: 40px 20px;
         }
-        .contact-item {
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-        .contact-item i {
-            font-size: 3rem;
-            color: #ff6b35;
-            margin-bottom: 1rem;
-        }
-        .contact-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        .contact-item p {
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
-        .phone {
-            font-size: 2rem;
-            color: #f7931e;
+        .contact a {
+            color: #4fc3f7;
             text-decoration: none;
-            font-weight: 600;
-            display: block;
-            margin-top: 0.5rem;
+            font-size: 1.2em;
         }
-        /* Simple Map Embed */
-        .map {
-            height: 300px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            margin-top: 2rem;
+        .socials a {
+            margin: 0 15px;
+            font-size: 1.5em;
+            color: #4fc3f7;
         }
-
-        /* Footer */
         footer {
-            background: #1a1a1a;
-            color: #ccc;
             text-align: center;
-            padding: 3rem 0;
-            font-size: 0.95rem;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .fade-in {
-            animation: fadeIn 1s ease-out;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(30,60,114,0.98);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: flex;
-            }
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            .hero .subtitle {
-                font-size: 1.3rem;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+            padding: 20px;
+            background: #333;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <header id="header">
-        <nav class="container">
-            <div class="logo">ZMobileDetails</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+
+    <header>
+        <h1>Z Mobile Details</h1>
+        <p>Professional Mobile Car Detailing - We Come to You!</p>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Premium Mobile Detailing</h1>
-            <p class="subtitle">Sparkling clean cars delivered to your door in Nashville & surrounding areas</p>
-            <a href="#contact" class="cta-button"><i class="fas fa-phone"></i> Book Now</a>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+
+            <div class="service-card">
+                <img src="https://www.meineke.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fdkq07unc94tv%2F5PmKnROfCx3MWBVb3cQhcA%2F365dc257bfdae4a77e5f2bccd08bf99c%2Fhow-to-clean-car-interior.jpg&w=3840&q=75" alt="Clean car interior detailing">
+                <h3>Interior Detailing</h3>
+                <p>We do interior like the detailing inside of the car like seats, floors, and dashboard etc.</p>
+                <div class="price">$50</div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://malcoautomotive.com/cdn/shop/articles/Blog-BannerImage-BestTireShineNoSling-DressingOnCarTires.png?v=1706272441&width=1100" alt="Shiny car tires exterior detailing">
+                <h3>Exterior Detailing</h3>
+                <p>We make your tires shine, clean the whole car with detailing tools and power washer and products etc.</p>
+                <div class="price">$50</div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://i.ytimg.com/vi/LGQgC0eXwAQ/maxresdefault.jpg" alt="Full car detail before and after">
+                <h3>Full Detail</h3>
+                <p>We will do both and everything is included making your car look brand new.</p>
+                <div class="price">$100</div>
+            </div>
+
         </div>
     </section>
 
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Premium Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-couch"></i>
-                    </div>
-                    <h3>Interior Detail</h3>
-                    <div class="price">$50</div>
-                    <p>Deep vacuum, steam clean seats, dashboard shine, and odor elimination for luxury comfort.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Exterior Detail</h3>
-                    <div class="price">$50</div>
-                    <p>Hand wash, clay bar, premium wax, and tire dressing for a flawless showroom shine.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <h3>Full Detail</h3>
-                    <div class="price">$100</div>
-                    <p>Complete interior & exterior transformation – the ultimate care package.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title">Get in Touch</h2>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Location</h3>
-                        <p>Nashville, TN Area<br><strong>Mobile Service</strong> – We come to you!</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <h3>Hours</h3>
-                        <p>Monday - Friday<br>10:00 AM - 6:00 PM</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <h3>Call Us</h3>
-                        <p>Ready to book?</p>
-                        <a href="tel:6159479757" class="phone">(615) 947-9757</a>
-                    </div>
-                </div>
-                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.563360199054!2d-86.789999!3d36.162663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8864ec0d9f906e2d%3A0x5e3b1a8a5f8a4b7b!2sNashville%2C%20TN!5e0!3m2!1sen!2sus!4v1690000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Ready to get your car looking fresh? Reach out today!</p>
+        <p>Phone: <a href="tel:6159479757">(615) 947-9757</a></p>
+        <p>Email: <a href="mailto:zmobile.detail2@gmail.com">zmobile.detail2@gmail.com</a></p>
+        <div class="socials">
+            <p>Follow us on social media:</p>
+            <a href="https://instagram.com/zmobiledetails" target="_blank">Instagram @zmobiledetails</a><br>
+            <a href="https://tiktok.com/@zmobiledetails" target="_blank">TikTok @zmobiledetails</a><br>
+            <a href="https://x.com/zmobiledetails" target="_blank">X @zmobiledetails</a>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p><i class="fas fa-shield-alt"></i> &copy; 2026 ZMobileDetails. Professional Mobile Detailing | Nashville & Surrounding Areas. <br>Quality Guaranteed.</p>
-        </div>
+        <p>&copy; 2026 Z Mobile Details. All rights reserved. Mobile service available!</p>
     </footer>
 
-    <script>
-        // Mobile Menu
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // Intersection Observer for Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        });
-        document.querySelectorAll('.service-card, .contact-item').forEach(el => {
-            el.style.animation = 'fadeInUp 0.8s ease-out both';
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>
